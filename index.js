@@ -38,8 +38,8 @@ passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 
-/* OAuth login route */
-app.get('/login/', passport.authenticate('facebook', { scope: ['email']}));
+/* OAuth account route */
+app.get('/account/', passport.authenticate('facebook', { scope: ['email']}));
 
 /* OAuth Callback URL */
 app.get('/return', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
